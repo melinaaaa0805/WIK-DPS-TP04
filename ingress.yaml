@@ -1,0 +1,17 @@
+# ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-echo-ingress
+spec:
+  rules:
+    - host: mondomaine.local  # Remplacez par le nom de domaine souhaité
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: my-echo-service
+                port:
+                  number: 80

@@ -1,0 +1,12 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-echo-service
+spec:
+  selector:
+    app: my-echo-pod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

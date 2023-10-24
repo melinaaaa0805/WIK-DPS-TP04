@@ -1,0 +1,18 @@
+# replicaset.yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-echo-replicaset
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: my-echo-pod
+  template:
+    metadata:
+      labels:
+        app: my-echo-pod
+    spec:
+      containers:
+        - name: echo-container
+          image: registry.cluster.wik.cloud/public/echo
